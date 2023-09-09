@@ -1,0 +1,22 @@
+<div class="contact text-center">
+    <h2>Get in Touch</h2>
+
+    <!-- Email, LinkedIn, GitHub, Twitter, (Approximate) residence, Gun.io,  -->
+
+    <div class="d-flex justify-content-center gap-4 my-4">
+        <ng-container *ngFor="let contact of contacts">
+            <ng-container *ngTemplateOutlet="contactTemplate; context: contact"></ng-container>
+        </ng-container>
+    </div>
+
+</div>
+
+<ng-template #contactTemplate let-name="name" let-icon="icon" let-message="message" let-link="link">
+    <div class="nav-item align-items-center text-light border border-light rounded-3 p-1 ">
+        <a [href]="link" class="justify-content-center nav-link">
+            <span class="mx-4">
+                <img class="img-fluid" [src]="icon" style="height: 30px; width: 30px;">
+            </span>
+        </a>
+    </div>
+</ng-template>
