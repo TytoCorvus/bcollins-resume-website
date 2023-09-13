@@ -9,6 +9,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 import { TypingHeaderComponent } from './typing-header/typing-header.component';
 import { SnowOverlayComponent } from './snow-overlay/snow-overlay.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,12 @@ import { SnowOverlayComponent } from './snow-overlay/snow-overlay.component';
     ContactComponent,
     HeroComponent,
     TypingHeaderComponent,
-    SnowOverlayComponent
+    SnowOverlayComponent,
+    SideNavComponent,
+    ExperienceComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule
   ],

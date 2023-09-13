@@ -1,5 +1,26 @@
 
 // Palette
+/* SCSS HEX */
+$lavender-web: #CBD9F4ff;
+$powder-blue: #AEC0E4ff;
+$charcoal: #475468ff;
+$caf-noir: #413119ff;
+$cambridge-blue: #7F9A91ff;
+$hookers-green: #4D7364ff;
+$black: #030404ff;
+$tangerine: #E47602ff;
+$selective-yellow: #FDB602ff;
+
+$primary: $powder-blue !default;
+$secondary: $charcoal !default;
+$success: $hookers-green !default;
+$warning: $selective-yellow !default;
+$dark: $black !default;
+$danger: $tangerine !default;
+$light: $lavender-web !default;
+$info: $cambridge-blue !default;
+
+
 
 // Spacing
 $spacer: 1rem !default;

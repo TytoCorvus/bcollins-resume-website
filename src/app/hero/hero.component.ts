@@ -13,7 +13,7 @@ export class HeroComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    const scene = document.getElementById('parallax-scene');
+    const scene = document.getElementById('hero');
     if(scene){
       const parallax = new Parallax(scene);
       parallax.friction(0.1, 0.1);
