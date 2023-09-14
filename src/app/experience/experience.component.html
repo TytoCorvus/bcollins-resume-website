@@ -1,12 +1,12 @@
-<div class="experience">
-    <div class="container text-dark ">
-        <div class="row">
-            <div class="col-12"><h1>Experience & Skills</h1></div><hr>
+<div class="bg-dark text-light py-4">
+    <h1>Experience & Skills</h1>
+    <div class="container">
+        <div class="row ">
             <!-- Profile and personal info -->
             <div class="col-lg-3 col-12">
                 <div class="row">
-                    <div class="col-lg-12 col-sm-6 col-12 " style="height: 300px;">Photo</div>
-                    <div class="col-lg-12 col-sm-6 col-12">
+                    <div class="col-lg-12 col-sm-6 col-12 bg-dark" style="height: 300px;">Photo</div>
+                    <div class="col-lg-12 col-sm-6 col-12 py-3">
                         <div class="d-flex flex-column justify-items-center">
                             <h5><strong>Bryce Collins</strong></h5>
                             <div class="row">
@@ -19,13 +19,13 @@
                 </div>
             </div>
             <!-- Skills, experience, etc -->
-            <div class="col-lg-9 col-12 p-4">
-                <div class="row">
+            <div class="col-lg-9 col-12 p-4 skills-block">
+                <div class="row g-0">
                     <div class="col-12">
                         <div class="row">
                             <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Skills'}"></ng-container>                  
                             <div class="col-12 col-lg-6 my-2">
-                                <h4>Languages & Frameworks</h4>
+                                <h4>Programming Languages</h4>
                                 <div class="row">
                                     <ng-container *ngFor="let language of languages">
                                         <ng-container *ngTemplateOutlet="techDetail; context: { $implicit: language}"></ng-container>
@@ -46,12 +46,12 @@
                         <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Experience'}"></ng-container>
                         <div class="row mt-2">
                             <div *ngFor="let job of experience" class="col-lg-6 col-12 text-start">
-                                <div class="fw-bold border-3 border-bottom mb-2">{{ job.business }}</div>
-                                <h6>{{ job.position }}</h6>
+                                <div class="fw-bold mb-2">{{ job.business }}</div>
+                                <h6 class="fst-italic">{{ job.position }}</h6>
                                 <h6>{{ job.date }}</h6>
-                                <h6><a [href]="job.homepage">{{ job.business + ' homepage'}}</a></h6>
+                                <h6><a [href]="job.homepage" class="text-link">{{'Homepage'}}</a></h6>
                                 <ul class="list-group list-group-flush mx-4">
-                                    <li *ngFor="let tech of job.technology" class="list-group-item text-center">{{ tech }}</li>
+                                    <li *ngFor="let tech of job.technology" class="list-group-item text-center bg-transparent">{{ tech }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
 </div>
 
 <ng-template let-header #sectionHeader>
-    <div class="col-12 text-center border-3 border-dark border-bottom">
+    <div class="col-12 text-center border-3 border-secondary border-bottom">
         <h3>{{ header }}</h3>
     </div>
 </ng-template>

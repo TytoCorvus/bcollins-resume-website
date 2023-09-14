@@ -10,8 +10,8 @@ export class SideNavComponent implements OnInit {
   active = false;
   links = [
     { message: 'Home', href: '#hero'},
-    { message: 'About', href: '#about'},
     { message: 'Experience', href: '#experience'},
+    { message: 'About', href: '#about'},
     { message: 'Projects', href: '#projects'},
     { message: 'Contact', href: '#contact'},
   ]

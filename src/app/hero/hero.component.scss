@@ -19,11 +19,12 @@
 /* parallax "viewport" */
 .hero-image {
     position: absolute;
-    width: 120%;
-    height: 120%;
+    width: 140%;
+    height: 140%;
     top: -10%;
     left: -10%;
     background: url('https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/FordyceSnow2020-8.jpeg');
+    background-repeat: no-repeat;
 }
 
 .hero-text {

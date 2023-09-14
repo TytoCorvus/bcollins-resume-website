@@ -1,0 +1,10 @@
+<div class="header-nav text-bg-dark d-flex align-items-center px-4">
+    <div class="image-container">Photo</div>
+    <div class="signature mx-5">Bryce Collins</div>
+
+    <div class="header-links ms-auto d-flex">
+        <ng-container *ngFor="let link of links">
+            <div class="nav-link">{{link.name}}</div>
+        </ng-container>
+    </div>
+</div>
