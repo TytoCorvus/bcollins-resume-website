@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderNavComponent implements OnInit {
 
   links = [
-    { name: 'Home', url: '#home' },
-    { name: 'About', url: '#about' },
-    { name: 'Experience', url: '#experience' },
-    { name: 'Projects', url: '#projects'},
-    { name: 'Contact', url: '#contact' },
+    { name: 'Home', url: '/', icon: 'fa-home'},
+    { name: 'About', url: '/about', icon: 'fa-user' },
+    { name: 'Experience', url: '/experience', icon: 'fa-briefcase' },
+    { name: 'Projects', url: '/projects', icon: 'fa-wrench'},
+    { name: 'Contact', url: '/contact', icon: 'fa-envelope' },
   ]
 
   constructor() { }

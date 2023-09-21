@@ -1,0 +1,122 @@
+$animation-duration: 1.8s;
+
+.home {
+    height: 100%;
+    width: 100%;
+    color: #F8F8F4ff;
+    text-shadow: 2px 2px 2px black;
+    pointer-events: auto;
+}
+
+$minimum-viewport-width: 600px;
+$maximum-viewport-width: 1200px;
+$minimum-text-size: 100px;
+$maximum-text-size: 480px;
+
+
+.introduction {
+    width: 100%;
+    height: 70%;
+
+    .introduction-1 {
+        position: relative;
+        height: 100%;
+        width: 30%;
+        top: 20%;
+        left: 10%;
+        font-size: 100px;
+    
+        .w-1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            color: rgb(218, 131, 32)
+        }
+    
+        .w-2 {
+            position: absolute;
+            top: 0.9ch;
+            left: 2.5ch;
+            z-index: 2;
+            color: rgb(42, 75, 62);
+        }
+    
+        .w-3 {
+            position: absolute;
+            top: 1.8ch;
+            left: 0ch;
+            z-index: 3;
+            color: rgb(218, 131, 32)
+        }
+    
+        .w-4 {
+            position: absolute;
+            top: 2.7ch;
+            left: 1.5ch;
+            z-index: 4;
+            color: rgb(42, 75, 62);
+        }
+    }
+    
+    .introduction-2 {
+        position: relative;
+        height: 100%;
+        width: 70%;
+        white-space: nowrap;
+    
+        .w-1 {
+            position: absolute;
+            top: 40%;
+            left: 0px;
+            font-size: 100px;
+            z-index: 2;
+            color: rgb(218, 131, 32)
+        }
+    
+        .w-2 {
+            position: absolute;
+            height: 100%;
+            left: 30px;
+            // font-size: calc($minimum-text-size + ($maximum-text-size - $minimum-text-size) * ((100vw - $minimum-viewport-width) / ($maximum-viewport-width - $minimum-viewport-width)));;
+            font-size: 360px;
+            z-index: 1;
+            color: rgb(42, 75, 62);
+            padding: 0px;
+        }
+    }
+}
+
+.subtext {
+    height: 25%;
+    .line-2 {
+        font-size: 60px;
+        animation: fadeIn $animation-duration forwards;
+        animation-delay: $animation-duration;
+        opacity: 0;
+    }
+    
+    .line-3 {
+        font-size: 60px;
+        animation: fadeIn $animation-duration forwards;
+        animation-delay: $animation-duration * 2;
+        opacity: 0;
+    }
+}
+
+.bg-dim {
+    background-color: rgba(0, 0, 0, 0.733);
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

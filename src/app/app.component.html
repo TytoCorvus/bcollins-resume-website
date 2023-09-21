@@ -1,22 +1,19 @@
 <!-- <scroll-header></scroll-header>
  -->
-<header-nav></header-nav>
-<div class="scene">
-    <hero></hero>
-    <div class="content">
-        <div class="section text-center justify-content-center">
 
+<div class="content">
+    <header-nav></header-nav>
+    <div class="scene" id="scene">
+        <div class="layer" data-depth="0.085">
+            <div class="hero-bg">
+                <div class="hero"></div>
+            </div>
         </div>
-        <div class="section text-center justify-content-center" id="experience">
-            <experience></experience>
+        <div class="layer" data-depth="0.1">
+            <router-outlet></router-outlet>
         </div>
-        <div class="section text-center justify-content-center" id="about">
-            <about></about>
-        </div>
-        <div class="section text-center justify-content-center" id="projects">Projects</div>
-        <div class="text-center justify-content-center" id="contact">
-            <contact></contact>
-        </div>
-    </div>
-    <snow-overlay></snow-overlay>    
+        <div class="layer" data-depth="0.5"> 
+            <snow-overlay></snow-overlay> 
+        </div> 
+    </div>  
 </div>

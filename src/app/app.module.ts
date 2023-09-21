@@ -13,6 +13,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { CommonModule } from '@angular/common';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HomeComponent } from './home/home.component';
+import { TextCycleComponent } from './text-cycle/text-cycle.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     SideNavComponent,
     ExperienceComponent,
     HeaderNavComponent,
-    HomeComponent
+    HomeComponent,
+    TextCycleComponent
   ],
   imports: [
     CommonModule,

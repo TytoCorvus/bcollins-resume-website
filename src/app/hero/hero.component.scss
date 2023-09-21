@@ -1,32 +1,6 @@
 /* Header font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Manrope:wght@700&family=Proza+Libre:wght@500&display=swap" rel="stylesheet');
 
-.hero {
-    position: relative;
-    height: 100vh;
-
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.layer {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-/* parallax "viewport" */
-.hero-image {
-    position: absolute;
-    width: 140%;
-    height: 140%;
-    top: -10%;
-    left: -10%;
-    background: url('https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/FordyceSnow2020-8.jpeg');
-    background-repeat: no-repeat;
-}
-
 .hero-text {
     position: relative;
 }

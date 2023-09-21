@@ -1,0 +1,48 @@
+.content {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.scene {
+    position: fixed;
+    height: calc(100% - 120px);
+    width: 100%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+// Different name but same functionality to allow scroll effects
+.no-parallax-layer {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+}
+
+.hero-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+/* parallax "viewport" */
+.hero {
+    position: absolute;
+    width: 110%;
+    height: 130%;
+    top: -10%;
+    left: -5%;
+    background: url('https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/FordyceSnow2020-8.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

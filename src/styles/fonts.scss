@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Noto Serif';
+    src: url(../assets/fonts/Noto_Serif/NotoSerif-VariableFont_wdth.ttf)
+}
+
+.font-noto-serif {
+    font-family: 'Noto Serif', serif;
+}
+
+.font-playfair-display {
+    font-family: 'Playfair Display', serif;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url(../assets/fonts/Cairo/Cairo-VariableFont_slnt.ttf)
+}
+
+.font-cairo {
+    font-family: 'Cairo', sans-serif;
+}

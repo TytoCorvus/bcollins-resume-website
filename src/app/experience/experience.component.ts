@@ -82,6 +82,12 @@ export class ExperienceComponent implements OnInit {
     }
   ]
 
+  openSections: IExperienceSection = {
+    languages: true,
+    technologies: false,
+    frameworks: false
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -90,4 +96,14 @@ export class ExperienceComponent implements OnInit {
   getIconPath(icon: string) {
     return `${this.iconPath}${icon}.png`
   }
+
+  toggle( sectionName: keyof IExperienceSection ){
+    this.openSections[sectionName] = !this.openSections[sectionName];
+  }
+}
+
+interface IExperienceSection {
+  'languages': boolean,
+  'technologies': boolean,
+  'frameworks': boolean
 }

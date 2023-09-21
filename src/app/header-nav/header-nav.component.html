@@ -1,10 +1,24 @@
-<div class="header-nav text-bg-dark d-flex align-items-center px-4">
-    <div class="image-container">Photo</div>
-    <div class="signature mx-5">Bryce Collins</div>
+<div class="header-nav bg-light text-dark d-flex flex-wrap align-items-center px-4">
+    <div class="user-img">
+        <img src="../../assets/photos/portrait.jpg" alt="My photo" class="img-fluid">
+    </div>
+    <h2 class="signature mx-5">Bryce Collins</h2>
 
-    <div class="header-links ms-auto d-flex">
+    <div class="header-links ms-auto d-flex align-items-center justify-content-center">
         <ng-container *ngFor="let link of links">
-            <div class="nav-link">{{link.name}}</div>
+            <ng-container *ngTemplateOutlet="linkWithIcon; context: { $implicit: link }"></ng-container>
         </ng-container>
     </div>
 </div>
+<div class="header-nav-offset"></div>
+
+<ng-template #linkWithIcon let-link>
+    <div class="link-with-icon">
+        <div class="grows">
+            <h4 class="header-nav-link fw-bold px-3 align-self-center" [routerLink]="link.url">{{link.name}}</h4>
+            <div class="flex-container text-success">
+                <i [class]="'fa header-nav-icon ' + link.icon"></i>
+            </div>
+        </div>
+    </div>
+</ng-template>

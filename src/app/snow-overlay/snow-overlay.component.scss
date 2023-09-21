@@ -7,6 +7,7 @@
     overflow: hidden;
     filter: drop-shadow(0 0 10px white);
     pointer-events: none;
+    background: transparent;
 }
 
 @function random_range($min, $max) {
@@ -16,6 +17,7 @@
   }
   
   .snow {
+    pointer-events: none;
     $total: 200;
     position: absolute;
     // width: 10px;
