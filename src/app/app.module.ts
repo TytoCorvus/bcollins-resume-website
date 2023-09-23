@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
-import { TypingHeaderComponent } from './typing-header/typing-header.component';
 import { SnowOverlayComponent } from './snow-overlay/snow-overlay.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { CommonModule } from '@angular/common';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HomeComponent } from './home/home.component';
-import { TextCycleComponent } from './text-cycle/text-cycle.component';
+import { TextCycleComponent } from './common/text-cycle/text-cycle.component';
+import { TechDetailComponent } from './common/tech-detail/tech-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,13 @@ import { TextCycleComponent } from './text-cycle/text-cycle.component';
     AboutComponent,
     ContactComponent,
     HeroComponent,
-    TypingHeaderComponent,
     SnowOverlayComponent,
     SideNavComponent,
     ExperienceComponent,
     HeaderNavComponent,
     HomeComponent,
-    TextCycleComponent
+    TextCycleComponent,
+    TechDetailComponent
   ],
   imports: [
     CommonModule,

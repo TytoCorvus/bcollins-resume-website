@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ITech, Tech } from '../common/tech-detail/tech-detail.component';
 
 @Component({
   selector: 'experience',
@@ -7,53 +8,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  iconPath = 'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/icons/'
+  languages: Array<ITech> = [
+    Tech.Typescript,
+    Tech.JavaScript,
+    Tech.Java,
+    Tech.Rust,
+    Tech.SQL,
+    Tech.HTML,
+    Tech.CSS,
+    Tech.Python,
+    Tech.Csharp,
+  ];
 
-  languages = [
-    { name: 'Typescript', level: 4, icons: ['typescript'], context: [
-      { name: 'Angular', icons: ['angular'] },
-      { name: 'NestJS', icons: ['nestjs'] },
-      { name: 'GraphQL', icons: ['graphql'] },
-      { name: 'TypeORM', icons: ['typeorm'] },
-      { name: 'Sequelize', icons: ['sequelize'] },
-    ] },
-    { name: 'JavaScript', level: 4, icons: ['javascript'], context: [
-      { name: 'Node.js', icons: ['nodejs'] },
-      { name: 'Express', icons: ['express'] },
-    ] },
-    { name: 'Java', level: 3, icons: ['java'] },
-    { name: 'Rust', level: 2, icons: ['rust'] },    
-    { name: 'SQL', level: 3, icons: ['sql'], context: [
-      { name: 'SQL Server', icons: ['mssqlserver'] },
-      { name: 'PostgresQL', icons: ['postgres'] },
-      { name: 'MongoDB', icons: ['mongodb'] },
-    ] },
-    { name: 'HTML', level: 4, icons: ['html5'] },
-    { name: 'CSS', level: 3, icons: ['css'], context: [
-      { name: 'Bootstrap', icons: ['bootstrap'] }
-    ] },
-    { name: 'Python', level: 2, icons: ['python'] },
-    { name: 'C#', level: 3, icons: ['csharp'], context: [
-      { name: 'Unity', icons: ['unity'] },
-    ]}
+  technologies: Array<ITech> = [
+    Tech.Git,
+    Tech.Docker,
+    Tech.Jira,
+    Tech.AWS,
+    Tech.SQL_Server,
+    Tech.PostgresQL,
+    Tech.MongoDB,
+    Tech.Unity,
+    Tech.Windows,
+    Tech.Linux,
+    Tech.Angular,
+    Tech.NestJS,
+    Tech.GraphQL,
+    Tech.TypeORM,
+    Tech.Sequelize,
+    Tech.Nodejs,
+    Tech.Express,
+    Tech.Bootstrap,
+    Tech.Terraform
   ]
 
-  technologies = [
-    { name: 'Git', icons: ['git'], context: [
-      { name: 'GitHub', icons: ['github'] },
-      { name: 'BitBucket', icons: ['bitbucket'] },
-    ] },
-    { name: 'Docker', icons: ['docker'] },
-    { name: 'Jira', icons: ['jira'] },
-    { name: 'AWS', icons: ['aws'], context: [
-      { name: 'Terraform', icons: ['terraform'] },
-    ] },
-    { name: 'SQL Server', icons: ['mssqlserver'] },
-    { name: 'PostgresQL', icons: ['postgres'] },
-    { name: 'MongoDB', icons: ['mongodb'] },
-    { name: 'Unity', icons: ['unity'] },
-    { name: 'Windows', icons: ['windows'] },
-    { name: 'Linux', icons: ['linux'] },
+  frameworks: Array<ITech> = [
+    Tech.Angular,
+    Tech.NestJS,
+    Tech.GraphQL,
+    Tech.TypeORM,
+    Tech.Sequelize,
+    Tech.Nodejs,
+    Tech.Express,
+    Tech.Bootstrap,
+    Tech.Terraform
   ]
 
   experience = [
@@ -61,15 +59,17 @@ export class ExperienceComponent implements OnInit {
       business: 'Clearwater Analytics',
       date: 'Jan 2019 - Feb 2021',
       position: 'Software Engineer',
+      summary: 'Built and maintained a variety of internal applications for the financial industry. Responsible for applications tasked with data ingestion and normalization from a variety of sources.',
       homepage: 'https://www.clearwateranalytics.com',
-      technology: [ 'Java', 'Microsoft SQL Server', 'Jira', 'Linux', 'Git']
+      technology: [ Tech.Java, Tech.SQL_Server, Tech.Jira, Tech.Linux, Tech.Git, Tech.Nodejs, Tech.JavaScript]
     },
     {
       business: 'Expert Institute',
       date: 'June 2021 - May 2023',
       position: 'Software Engineer',
+      summary: 'Expanded functionality of a client-facing website designed as a marketplace for expert witnesses. Refined system performance and reliability and constructed intake for new business offerings.',
       homepage: 'https://www.expertinstitute.com',
-      technology: [ 'Typescript', 'Angular', 'Sequelize', 'AWS', 'Terraform', 'Postgres']
+      technology: [ Tech.Typescript, Tech.Angular, Tech.Sequelize, Tech.AWS, Tech.Terraform, Tech.PostgresQL, Tech.Bootstrap, Tech.Express, Tech.Nodejs],
     }
   ]
 
@@ -93,12 +93,16 @@ export class ExperienceComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getIconPath(icon: string) {
-    return `${this.iconPath}${icon}.png`
-  }
-
   toggle( sectionName: keyof IExperienceSection ){
     this.openSections[sectionName] = !this.openSections[sectionName];
+  }
+
+  getAge() {
+    // Using a close-ish date here, since I don't want to publish my actual birthdate ;)
+    const birthDate = new Date('1994-11-15');
+    const now = new Date();
+    const diff = now.getTime() - birthDate.getTime();
+    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
   }
 }
 

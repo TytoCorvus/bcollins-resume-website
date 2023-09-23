@@ -1,11 +1,11 @@
-$animation-duration: 1.8s;
-
 .home {
     height: 100%;
     width: 100%;
     color: #F8F8F4ff;
     text-shadow: 2px 2px 2px black;
     pointer-events: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 $minimum-viewport-width: 600px;
@@ -13,94 +13,174 @@ $maximum-viewport-width: 1200px;
 $minimum-text-size: 100px;
 $maximum-text-size: 480px;
 
+$bryce-top-pos: calc(60% - (20vi / 2));
+
+$fade-duration: 0.35s;
+$intro-1-delay: 0.5s;
+
+$intro-2-delay: 3s;
+
+$subtext-delay-1: 4s;
+$subtext-delay-2: 2.5s;
+$animation-duration: 1s;
 
 .introduction {
     width: 100%;
     height: 70%;
+    line-height: 1;
 
     .introduction-1 {
         position: relative;
         height: 100%;
-        width: 30%;
-        top: 20%;
+        width: 35%;
         left: 10%;
-        font-size: 100px;
+        font-size: 7vi;
     
         .w-1 {
             position: absolute;
-            top: 0px;
+            top: $bryce-top-pos;
             left: 0px;
             z-index: 1;
-            color: rgb(218, 131, 32)
+            color: rgb(218, 131, 32);
+            opacity: 0;
+            animation: fadeIn $fade-duration forwards;
+            animation-delay: $intro-1-delay;
         }
     
         .w-2 {
             position: absolute;
-            top: 0.9ch;
+            top: calc($bryce-top-pos + 0.9ch);
             left: 2.5ch;
             z-index: 2;
             color: rgb(42, 75, 62);
+            opacity: 0;
+            animation: fadeIn $fade-duration forwards;
+            animation-delay: ($fade-duration + $intro-1-delay) * 1;
         }
     
         .w-3 {
             position: absolute;
-            top: 1.8ch;
+            top: calc($bryce-top-pos + 1.8ch);
             left: 0ch;
             z-index: 3;
-            color: rgb(218, 131, 32)
+            color: rgb(218, 131, 32);
+            opacity: 0;
+            animation: fadeIn $fade-duration forwards;
+            animation-delay: ($fade-duration + $intro-1-delay) * 1.5;
         }
     
         .w-4 {
             position: absolute;
-            top: 2.7ch;
+            top: calc($bryce-top-pos + 2.7ch);
             left: 1.5ch;
             z-index: 4;
             color: rgb(42, 75, 62);
+            opacity: 0;
+            animation: fadeIn $fade-duration forwards;
+            animation-delay: ($fade-duration + $intro-1-delay) * 2;
         }
     }
     
     .introduction-2 {
         position: relative;
         height: 100%;
-        width: 70%;
-        white-space: nowrap;
+        width: 65%;
     
         .w-1 {
             position: absolute;
-            top: 40%;
-            left: 0px;
-            font-size: 100px;
+            font-size: 6vi;
+            top: calc(60% - (6vi / 2));
+            left: 0vb;
             z-index: 2;
-            color: rgb(218, 131, 32)
+            color: rgb(218, 131, 32);
+            opacity: 0;
+            animation: fadeIn $fade-duration forwards;
+            animation-delay: $intro-2-delay;
         }
     
         .w-2 {
             position: absolute;
-            height: 100%;
-            left: 30px;
-            // font-size: calc($minimum-text-size + ($maximum-text-size - $minimum-text-size) * ((100vw - $minimum-viewport-width) / ($maximum-viewport-width - $minimum-viewport-width)));;
-            font-size: 360px;
+            left: 3vb;
+            font-size: 20vi;
+            top: calc(60% - (20vi / 2));
             z-index: 1;
             color: rgb(42, 75, 62);
-            padding: 0px;
+            opacity: 0;
+            animation: fadeIn calc($fade-duration * 2.5) forwards;
+            animation-delay: $intro-2-delay + $fade-duration;
         }
     }
 }
 
 .subtext {
-    height: 25%;
+    position: relative;
+    $subtext-height: 4vi;
+    min-height: 25%;
+    width: 80%;
+    left: 10%;
+
+    color: #F8F8F4ff;
+
     .line-2 {
-        font-size: 60px;
         animation: fadeIn $animation-duration forwards;
-        animation-delay: $animation-duration;
+        animation-delay: calc($subtext-delay-1 + $animation-duration);
         opacity: 0;
+        font-size: $subtext-height;
     }
     
     .line-3 {
-        font-size: 60px;
         animation: fadeIn $animation-duration forwards;
-        animation-delay: $animation-duration * 2;
+        animation-delay: calc($subtext-delay-1 + ( $animation-duration * 2 ));
         opacity: 0;
+        font-size: $subtext-height;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .home {
+        height: 100%;
+        min-height: 100%;
+        overflow-y: auto;
+    }
+
+    .introduction {
+        height: 60%;
+        width: 100%;
+        left: 10%;
+
+        .introduction-1 {
+            display: none;
+            visibility: hidden;
+            width: 0%;
+            height: 0%;
+        }
+
+        .introduction-2 {
+            width: 80%;
+            left: 10%;
+
+            .w-1 {
+                font-size: 8vi;
+                animation-delay: $intro-1-delay;
+            }
+
+            .w-2 {
+                font-size: 28vi;
+                animation-delay: $intro-1-delay * 2;
+            }
+        }
+    }
+
+    .subtext {
+        font-size: 6vi;
+
+        .line-2 {
+            animation-delay: calc($subtext-delay-2 + $animation-duration);
+        }
+
+        .line-2 {
+            animation-delay: calc($subtext-delay-2 + ($animation-duration * 2));
+        }
     }
 }
 

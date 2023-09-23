@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IStyledMessage } from '../text-cycle/text-cycle.component';
+import { IStyledMessage } from '../common/text-cycle/text-cycle.component';
 
 @Component({
   selector: 'home',

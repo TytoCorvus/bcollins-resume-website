@@ -1,69 +1,78 @@
 <div class="page-content text-center">
     <div class="info-card">
-        <h1 class="display-4 fw-bold">Experience & Skills</h1>
+        <h1 class="display-4 fw-bold mb-3 font-cairo">Experience & Skills</h1>
         <div class="container">
             <div class="row ">
                 <!-- Profile and personal info -->
-                <div class="col-lg-3 col-12">
+                <div class="col-lg-4 col-12">
                     <div class="row">
                         <div class="col-lg-12 col-sm-6 col-12 bg-dark" style="height: 300px;">Photo</div>
                         <div class="col-lg-12 col-sm-6 col-12 py-3">
                             <div class="d-flex flex-column justify-items-center">
-                                <h5><strong>Bryce Collins</strong></h5>
-                                <div class="row">
-                                    <h6 class="col-6 text-end"><strong>Occupation:</strong></h6> <h6 class="col-6 text-start">Software Engineer</h6>
-                                    <h6 class="col-6 text-end"><strong>Age:</strong></h6> <h6 class="col-6 text-start">28 Years</h6>
-                                    <h6 class="col-6 text-end"><strong>Hometown:</strong></h6> <h6 class="col-6 text-start">Newcastle, CA</h6>
+                                <h3 class=" h1 font-noto-serif"><strong>Bryce Collins</strong></h3>
+                                <div class="row g-2 personal-details font-cairo">
+                                    <strong class="col-5 text-end text-truncate align-self-center">Occupation:</strong> <div class="col-7 text-start align-self-center fst-italic">Software Engineer</div>
+                                    <strong class="col-5 text-end text-truncate align-self-center">Age:</strong> <div class="col-7 text-start align-self-center fst-italic">{{ getAge() }} years</div>
+                                    <strong class="col-5 text-end text-truncate align-self-center">Hometown:</strong> <div class="col-7 text-start align-self-center fst-italic">Software Engineer</div>
+                                    <strong class="col-5 text-end text-truncate align-self-center">Education:</strong> 
+                                        <div class="col-7 text-start align-self-center fst-italic">
+                                                <div class="d-flex flex-column">
+                                                    
+                                                </div>
+
+                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Skills, experience, etc -->
-                <div class="col-lg-9 col-12 p-4 skills-block">
+                <div class="col-lg-8 col-12 p-4 skills-block px-5">
                     <div class="row g-0">
                         <div class="col-12">
                             <div class="row">
-                                <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Skills'}"></ng-container>                  
-                                <div class="col-12 my-2" (click)="toggle('languages')">
-                                    <h4>Programming Languages</h4>
-                                    <div class="expands">
-                                        <div class="row">
-                                            <ng-container *ngFor="let language of languages">
-                                                <ng-container *ngTemplateOutlet="techDetail; context: { $implicit: language}"></ng-container>
-                                            </ng-container>
+                                <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Skills', class:'display-4'}"></ng-container>                  
+                                <div class="col-12 my-2">
+                                    <h4 class="fw-bolder">Programming Languages</h4>
+                                    <div class="row px-5" id="languages">
+                                        <div *ngFor="let tech of languages" class="col-2">
+                                            <tech-detail [tech]="tech"></tech-detail>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 my-2">
-                                    <h4>Technologies</h4>
-                                    <div class="row">
-                                        <ng-container *ngFor="let tech of technologies">
-                                            <ng-container *ngTemplateOutlet="techDetail; context: { $implicit: tech}"></ng-container>
-                                        </ng-container>
+                                    <h4 class="fw-bolder">Technologies & Frameworks</h4>
+                                    <div class="row px-5">
+                                        <div *ngFor="let tech of technologies" class="col-2">
+                                            <tech-detail [tech]="tech"></tech-detail>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 my-2">
-                            <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Experience'}"></ng-container>
-                            <div class="row mt-2">
-                                <div *ngFor="let job of experience" class="col-lg-6 col-12 text-start">
+                        <div class="col-12 my-2">
+                            <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Experience', class:'display-4'}"></ng-container>
+                            <div class="row mt-2 px-3">
+                                <div *ngFor="let job of experience" class="col-lg-6 col-12 text-center job-experience">
                                     <div class="fw-bold mb-2">{{ job.business }}</div>
-                                    <h6 class="fst-italic">{{ job.position }}</h6>
-                                    <h6>{{ job.date }}</h6>
-                                    <h6><a [href]="job.homepage" class="text-link">{{'Homepage'}}</a></h6>
-                                    <ul class="list-group list-group-flush mx-4">
-                                        <li *ngFor="let tech of job.technology" class="list-group-item text-center bg-transparent">{{ tech }}</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 my-2">
-                            <ng-container *ngTemplateOutlet="sectionHeader; context: {$implicit: 'Schooling'}"></ng-container>
-                            <div class="row mt-2 gap-2">
-                                <div *ngFor="let school of schooling" class="col-12">
-                                    School
+                                    <div class="fst-italic">{{ job.position }}</div>
+                                    <div class="timeline-graphic">
+
+                                        <div class="circle-transparent circle-1"></div>
+                                        <div class="circle-transparent circle-2"></div>
+                                        <div class="line"></div>
+                                    </div>
+                                    <div>{{ job.date }}</div>
+                                    <p class="summary text-start fst-italic">{{ job.summary }}</p>
+                                    <div><a [href]="job.homepage">{{'Homepage'}}</a></div>
+                                    <div class="col-12 text-center border-1 border-secondary border-bottom font-playfair-display mt-2">
+                                        <h5>Relevant Tech</h5>
+                                    </div>
+                                    <div class="row px-4">
+                                        <div *ngFor="let tech of job.technology" class="col-2">
+                                            <tech-detail [tech]="tech" [small]="true"></tech-detail>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -74,30 +83,8 @@
     </div>
 </div>
 
-<ng-template let-header #sectionHeader>
-    <div class="col-12 text-center border-3 border-secondary border-bottom">
-        <h3>{{ header }}</h3>
-    </div>
-</ng-template>
-
-<ng-template let-tech #techDetail>
-    <div class="tech-detail text-center col-2 my-2" >
-        <div class="mx-auto " ><img *ngFor="let icon of tech.icons" class="tech-detail-icon" [src]="getIconPath(icon)" ></div>
-        <div class="fw-bold">{{tech.name}}</div>
-        <!--
-                    <div class="tech-context" *ngIf="tech.context?.length">
-            <div class="d-flex flex-wrap gap-2">
-                <ng-container *ngFor="let context of tech.context">
-                    <div class="mx-2">
-                        <img *ngFor="let icon of context.icons" 
-                            [src]="getIconPath(icon)" 
-                            class="tech-detail-context-icon m-1"
-                            [alt]="context.name">
-                    </div>
-                </ng-container>
-            </div>
-        </div>
-        -->
-
+<ng-template let-header let-class="class" #sectionHeader>
+    <div class="col-12 text-center border-3 border-secondary border-bottom font-playfair-display fw-bold">
+        <div [class]="class">{{ header }}</div>
     </div>
 </ng-template>

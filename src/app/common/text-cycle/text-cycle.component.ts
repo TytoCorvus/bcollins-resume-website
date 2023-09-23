@@ -8,8 +8,8 @@ import * as _ from 'lodash';
 })
 export class TextCycleComponent implements OnInit {
   @Input() messages!: IStyledMessage[];
-  @Input() underlineColor!: string;
   @Input() cycleDuration!: number;
+  @Input() cycleDelay: number = 0;
 
   @ViewChild('textCycle') textCycle!: ElementRef;
 
@@ -26,10 +26,13 @@ export class TextCycleComponent implements OnInit {
   ngOnInit(): void {
     this.messageQueue = _.cloneDeep(this.messages);
     this.currentMessage = this.messageQueue[0];
-    this.messageInterval = setInterval(() => {
-      this.textCycle.nativeElement.classList.remove('fading-in');
-      this.textCycle.nativeElement.classList.add('fading-out');
-    }, this.cycleDuration);
+    
+    setTimeout(() => {
+      this.messageInterval = setInterval(() => {
+        this.textCycle.nativeElement.classList.remove('fading-in');
+        this.textCycle.nativeElement.classList.add('fading-out');
+      }, this.cycleDuration);
+    }, 0 + this.cycleDelay);
 
     setTimeout(() => {
       this.fadeOutInterval = setInterval(() => {
@@ -37,7 +40,7 @@ export class TextCycleComponent implements OnInit {
         this.textCycle.nativeElement.classList.remove('fading-out');
         this.textCycle.nativeElement.classList.add('fading-in');
       }, this.cycleDuration);
-    }, 1400)
+    }, 1400 + this.cycleDelay);
 
     this.maxCharacterLength = this.messages.reduce((max, message) => {
       if (message.message.length > max) {
