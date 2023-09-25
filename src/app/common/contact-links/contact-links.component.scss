@@ -1,0 +1,60 @@
+.contact-links {
+    font-size: 28px;
+    color: transparent;
+    background-color: rgba(0, 0, 0, 0.733);
+
+    .bouncy-icon:hover {
+        animation: bouncy .4s ease-in-out;
+        animation-iteration-count: 1;
+    }
+
+    &.contact-links-lg {
+        font-size: 48px;
+
+        i {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .bouncy-icon:hover {
+            animation: bouncy-lg .4s ease-in-out;
+            animation-iteration-count: 1;
+        }
+    }
+}
+
+@keyframes bouncy {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    85% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bouncy-lg {
+    0% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(0);
+    }
+    85% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

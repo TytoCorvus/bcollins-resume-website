@@ -11,15 +11,16 @@
                             <div class="d-flex flex-column justify-items-center">
                                 <h3 class=" h1 font-noto-serif"><strong>Bryce Collins</strong></h3>
                                 <div class="row g-2 personal-details font-cairo">
-                                    <strong class="col-5 text-end text-truncate align-self-center">Occupation:</strong> <div class="col-7 text-start align-self-center fst-italic">Software Engineer</div>
-                                    <strong class="col-5 text-end text-truncate align-self-center">Age:</strong> <div class="col-7 text-start align-self-center fst-italic">{{ getAge() }} years</div>
-                                    <strong class="col-5 text-end text-truncate align-self-center">Hometown:</strong> <div class="col-7 text-start align-self-center fst-italic">Software Engineer</div>
-                                    <strong class="col-5 text-end text-truncate align-self-center">Education:</strong> 
-                                        <div class="col-7 text-start align-self-center fst-italic">
+                                    <strong class="col-5 text-end text-truncate align-self-center">Occupation:</strong> <div class="col-7 text-start align-self-center">Software Engineer</div>
+                                    <strong class="col-5 text-end text-truncate align-self-center">Age:</strong> <div class="col-7 text-start align-self-center">{{ getAge() }} years</div>
+                                    <strong class="col-5 text-end text-truncate align-self-center">Hometown:</strong> <div class="col-7 text-start align-self-center">Newcastle, CA</div>
+                                    <strong class="col-5 text-end text-truncate align-self-top">Education:</strong> 
+                                        <div class="col-7 text-start align-self-center">
                                                 <div class="d-flex flex-column">
-                                                    
+                                                    <div>California State University - Sacramento</div>
+                                                    <div class="fst-italic" [title]="'Bachelor of Science - Computer Science'">B.Sc - Computer Science</div>
+                                                    <div>Graduated in July 2018</div>
                                                 </div>
-
                                         </div>
                                 </div>
                             </div>
@@ -55,22 +56,23 @@
                             <div class="row mt-2 px-3">
                                 <div *ngFor="let job of experience" class="col-lg-6 col-12 text-center job-experience">
                                     <div class="fw-bold mb-2">{{ job.business }}</div>
-                                    <div class="fst-italic">{{ job.position }}</div>
                                     <div class="timeline-graphic">
-
                                         <div class="circle-transparent circle-1"></div>
                                         <div class="circle-transparent circle-2"></div>
                                         <div class="line"></div>
+                                        <div class="date date-1">{{ job.dates[0] }}</div>
+                                        <div class="date date-2">{{ job.dates[1] }}</div>
                                     </div>
-                                    <div>{{ job.date }}</div>
+                                    <div class="fst-italic">{{ job.position }}</div>
                                     <p class="summary text-start fst-italic">{{ job.summary }}</p>
                                     <div><a [href]="job.homepage">{{'Homepage'}}</a></div>
-                                    <div class="col-12 text-center border-1 border-secondary border-bottom font-playfair-display mt-2">
-                                        <h5>Relevant Tech</h5>
-                                    </div>
-                                    <div class="row px-4">
-                                        <div *ngFor="let tech of job.technology" class="col-2">
-                                            <tech-detail [tech]="tech" [small]="true"></tech-detail>
+
+                                    <div class="col-12 text-center border-1 border-secondary border-top border-bottom font-playfair-display mt-2">
+                                        <h5 class="mb-0">Relevant Tech</h5>
+                                        <div class="row px-4">
+                                            <div *ngFor="let tech of job.technology" class="col-2">
+                                                <tech-detail [tech]="tech" [small]="true"></tech-detail>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

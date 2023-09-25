@@ -24,13 +24,15 @@
 
 .timeline-graphic {
     position: relative;
+
     $line-color: rgb(238, 158, 9);
     $circle-height: 30px;
-    $circle-height-inner: 24px;
-
-    width: 80%;
-    left: 10%;
-    height: $circle-height;
+    
+    font-size: 20px;
+    
+    height: calc($circle-height + 2ch);
+    width: 70%;
+    left: 15%;
 
     .circle-transparent {
         position: absolute;
@@ -53,12 +55,25 @@
         $line-height: 8px;
         position: absolute;
         height: $line-height;
-        border-top: 2px solid $line-color;
-        border-bottom: 2px solid $line-color;
-        // background-color: transparent;
-        background: linear-gradient(90deg, #00000054, #000000);
-        top: calc(50% - ($line-height / 2));
+        background-color: $line-color;
+        top: calc(($circle-height / 2) - ($line-height / 2));
         left: calc($circle-height - 2px);
         width: calc(100% - (2 * $circle-height) + 4px);
+    }
+
+    .date {
+        top: calc($circle-height);
+        font-weight: bold;
+        text-align: center;
+
+        &.date-1 { 
+            position: absolute;
+            left: calc(($circle-height / 2) - 2ch);
+        }
+
+        &.date-2 {
+            position: absolute;
+            left: calc(100% - ($circle-height / 2) - 2ch);
+        }
     }
 }

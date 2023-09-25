@@ -14,6 +14,7 @@ import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HomeComponent } from './home/home.component';
 import { TextCycleComponent } from './common/text-cycle/text-cycle.component';
 import { TechDetailComponent } from './common/tech-detail/tech-detail.component';
+import { ContactLinksComponent } from './common/contact-links/contact-links.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TechDetailComponent } from './common/tech-detail/tech-detail.component'
     HeaderNavComponent,
     HomeComponent,
     TextCycleComponent,
-    TechDetailComponent
+    TechDetailComponent,
+    ContactLinksComponent
   ],
   imports: [
     CommonModule,

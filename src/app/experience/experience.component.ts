@@ -22,7 +22,6 @@ export class ExperienceComponent implements OnInit {
 
   technologies: Array<ITech> = [
     Tech.Git,
-    Tech.Docker,
     Tech.Jira,
     Tech.AWS,
     Tech.SQL_Server,
@@ -58,6 +57,7 @@ export class ExperienceComponent implements OnInit {
     {
       business: 'Clearwater Analytics',
       date: 'Jan 2019 - Feb 2021',
+      dates: [2019, 2021],
       position: 'Software Engineer',
       summary: 'Built and maintained a variety of internal applications for the financial industry. Responsible for applications tasked with data ingestion and normalization from a variety of sources.',
       homepage: 'https://www.clearwateranalytics.com',
@@ -66,6 +66,7 @@ export class ExperienceComponent implements OnInit {
     {
       business: 'Expert Institute',
       date: 'June 2021 - May 2023',
+      dates: [2021, 2023],
       position: 'Software Engineer',
       summary: 'Expanded functionality of a client-facing website designed as a marketplace for expert witnesses. Refined system performance and reliability and constructed intake for new business offerings.',
       homepage: 'https://www.expertinstitute.com',

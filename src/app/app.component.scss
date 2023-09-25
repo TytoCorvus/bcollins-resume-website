@@ -1,13 +1,6 @@
-.content {
-    position: absolute;
-    min-height: 100%;
-    width: 100%;
-    overflow-y: hidden;
-}
-
 .scene {
     position: fixed;
-    height: calc(100% - 120px);
+    height: calc(100% - 70px);
     width: 100%;
 
     overflow-y: hidden;

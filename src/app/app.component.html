@@ -1,19 +1,17 @@
 <!-- <scroll-header></scroll-header>
  -->
 
-<div class="content">
-    <header-nav></header-nav>
-    <div class="scene" id="scene">
-        <div class="layer" data-depth="0.085">
-            <div class="hero-bg">
-                <div class="hero"></div>
-            </div>
+<header-nav></header-nav>
+<div class="scene bg-secondary" id="scene">
+    <div class="layer" data-depth="0.085">
+        <div class="hero-bg">
+            <div class="hero"></div>
         </div>
-        <div class="layer" data-depth="0.1">
-            <router-outlet></router-outlet>
-        </div>
-        <div class="layer" data-depth="0.5"> 
-            <snow-overlay></snow-overlay> 
-        </div> 
-    </div>  
-</div>
+    </div>
+    <div class="layer" data-depth="0.1">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="layer" data-depth="0.5"> 
+        <snow-overlay></snow-overlay> 
+    </div> 
+</div>  

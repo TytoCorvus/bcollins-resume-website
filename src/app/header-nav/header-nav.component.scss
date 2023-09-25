@@ -1,21 +1,20 @@
 
 
-$header-nav-height: 120px;
+$header-nav-height: 70px;
 
-.user-img {
-    height: $header-nav-height;
-    width: 104px;
+.img-container {
+    height: 100%;
+    width: 100%;
 }
 
 .signature {
     margin-bottom: 0px;
+    font-size: 36px;
 }
 
 .header-nav {
-    position: fixed;
-    z-index: 10;
     width: 100%;
-    min-height: $header-nav-height;
+    height: $header-nav-height;
 }
 
 .header-nav-offset {
