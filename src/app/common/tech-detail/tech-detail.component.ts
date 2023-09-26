@@ -23,6 +23,7 @@ export interface ITech {
 
 export const Tech = {
   Typescript: {name: 'Typescript', icon: 'typescript'},
+  Javascript: {name: 'Javascript', icon: 'javascript'},
   Angular: {name: 'Angular', icon: 'angular'},
   NestJS: {name: 'NestJS', icon: 'nestjs'},
   GraphQL: {name: 'GraphQL', icon: 'graphql'},

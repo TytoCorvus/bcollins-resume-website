@@ -7,14 +7,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeroComponent } from './hero/hero.component';
 import { SnowOverlayComponent } from './snow-overlay/snow-overlay.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { HomeComponent } from './home/home.component';
 import { TextCycleComponent } from './common/text-cycle/text-cycle.component';
 import { TechDetailComponent } from './common/tech-detail/tech-detail.component';
 import { ContactLinksComponent } from './common/contact-links/contact-links.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -23,18 +24,19 @@ import { ContactLinksComponent } from './common/contact-links/contact-links.comp
     ContactComponent,
     HeroComponent,
     SnowOverlayComponent,
-    SideNavComponent,
     ExperienceComponent,
     HeaderNavComponent,
     HomeComponent,
     TextCycleComponent,
     TechDetailComponent,
-    ContactLinksComponent
+    ContactLinksComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

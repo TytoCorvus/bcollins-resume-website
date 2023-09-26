@@ -1,0 +1,47 @@
+<div class="page-content mb-6">
+    <ng-container *ngIf="projects$ | async as projects; else spinner">
+        <div class="project-container">
+            <div class="row">
+                <div *ngFor="let project of projects" class="col-12 col-md-6 g-5">
+                    <div class="d-flex justify-content-center">
+                        <div class="project bg-primary ">
+                            <div class="img-container" [style.background]="'url(' + project.photo + ')'">
+                            </div>
+                            <div class="project-info text center">
+                                <div class="d-flex flex-column h-100">
+                                    <h3 class="text-center font-cairo fw-bold border-2 border-bottom border-secondary mb-1">{{project.name}}</h3>
+
+                                <div class="description">
+                                    <div class="d-flex gap-4 overflow-auto tech-list px-5 justify-content-center">
+                                        <div *ngFor="let tech of project.technology">
+                                            <tech-detail [tech]="getITech(tech)" [small]="true"></tech-detail>
+                                        </div>
+                                    </div>
+                                    <p class="font-playfair-display px-2 my-0">{{project.description}}</p>
+                                </div>
+                                <div class="d-flex justify-content-center my-auto">
+                                    <a class="mx-auto align-self-end" [href]="project.repository" target="_blank">
+                                        <button class="btn btn-secondary text-light rounded-1 mx-auto text-center">
+                                            Go to repository
+                                            <i class="fab fa-github mx-1"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<ng-template #spinner>
+    <div class="spinner-container">
+        <div class="spinner-border text-danger" style="width: 6rem; height: 6rem; border-width: 8px;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</ng-template>

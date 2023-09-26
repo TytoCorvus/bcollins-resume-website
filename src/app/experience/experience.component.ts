@@ -74,28 +74,19 @@ export class ExperienceComponent implements OnInit {
     }
   ]
 
-  schooling = [
-    {
-      name: 'California State University - Sacramento',
-      degree: 'Bachelor of Science in Computer Science',
-      date: '2015 - 2018',
-      homepage: 'https://www.csus.edu/',
-    }
+  photos = [
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/1BBCC59C-B7E0-489B-BC30-B0F8BFB894A9_L0_001.JPEG',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/69102479436__F12AE96C-30A1-4EC0-9A2D-BD530B63D574.jpg',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/70906233553__28C893F9-3AFB-4F6A-93B3-249274985797.jpg',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_1999.jpg',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_2660.JPG',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_2874.jpg',
+    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_2874.jpg'
   ]
-
-  openSections: IExperienceSection = {
-    languages: true,
-    technologies: false,
-    frameworks: false
-  }
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  toggle( sectionName: keyof IExperienceSection ){
-    this.openSections[sectionName] = !this.openSections[sectionName];
   }
 
   getAge() {
@@ -105,10 +96,4 @@ export class ExperienceComponent implements OnInit {
     const diff = now.getTime() - birthDate.getTime();
     return Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
   }
-}
-
-interface IExperienceSection {
-  'languages': boolean,
-  'technologies': boolean,
-  'frameworks': boolean
 }
