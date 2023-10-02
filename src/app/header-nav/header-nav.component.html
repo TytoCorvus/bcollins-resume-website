@@ -31,7 +31,7 @@
 </div>
 
 <ng-template #navbarLink let-link>
-    <a [href]="link.url" class="nav-link link-with-icon">
+    <a class="nav-link link-with-icon" (click)="routeTo(link.url)">
         <div class="grows">
             <h4 class="header-nav-link fw-bold px-3 align-self-center">{{link.name}}</h4>
             <div class="flex-container text-success">

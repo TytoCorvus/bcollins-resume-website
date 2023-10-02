@@ -1,4 +1,4 @@
-<div class="page-content text-center">
+<div class="page-content text-center mt-3">
     <div class="info-card">
         <h1 class="display-4 fw-bold mb-3 font-cairo">Experience & Skills</h1>
         <div class="container">
@@ -7,9 +7,10 @@
                 <div class="col-lg-4 col-12">
                     <div class="row">
                         <div class="col-lg-12 col-sm-6 col-12">
-                            <div class="photo-container">
-                                <img [src]="photos[4]" alt="" style="max-width: 100%; height: auto;">
-                            </div>
+                            <img class="img-fluid" [src]="photos[6]" alt="" style="max-width: 100%; height: auto;">
+                            <!-- <div style="height: 400px; width: 100%;">
+                                <img class="img-fluid" [src]="photos[0]" style="max-width: 100%; height: auto;">
+                            </div> -->
                         </div>
                         <div class="col-lg-12 col-sm-6 col-12 py-3">
                             <div class="d-flex flex-column justify-items-center">
@@ -19,13 +20,16 @@
                                     <strong class="col-5 text-end text-truncate align-self-center">Age:</strong> <div class="col-7 text-start align-self-center">{{ getAge() }} years</div>
                                     <strong class="col-5 text-end text-truncate align-self-center">Hometown:</strong> <div class="col-7 text-start align-self-center">Newcastle, CA</div>
                                     <strong class="col-5 text-end text-truncate align-self-top">Education:</strong> 
-                                        <div class="col-7 text-start align-self-center">
-                                                <div class="d-flex flex-column">
-                                                    <div>California State University - Sacramento</div>
-                                                    <div class="fst-italic" [title]="'Bachelor of Science - Computer Science'">B.Sc - Computer Science</div>
-                                                    <div>Graduated in July 2018</div>
-                                                </div>
-                                        </div>
+                                    <div class="col-7 text-start align-self-center">
+                                            <div class="d-flex flex-column">
+                                                <div>California State University - Sacramento</div>
+                                                <div class="fst-italic" [title]="'Bachelor of Science - Computer Science'">B.Sc - Computer Science</div>
+                                                <div>Graduated in July 2018</div>
+                                            </div>
+                                    </div>
+                                    <div class="text-center col-12">
+                                        <a class="text-link" [href]="resume">Resume <i class="fa fa-arrow-up-right-from-square mx-1"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

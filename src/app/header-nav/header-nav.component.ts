@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header-nav',
@@ -15,9 +17,13 @@ export class HeaderNavComponent implements OnInit {
     { name: 'Contact', url: '/contact', icon: 'fa-envelope' },
   ]
 
-  constructor() { }
+  constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  routeTo(url: string) {
+    this.router.navigateByUrl(url);
   }
 
 }
