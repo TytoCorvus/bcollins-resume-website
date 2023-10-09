@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { catchError, lastValueFrom, map, of } from 'rxjs';
+import { ToastService, ToastType } from '../common/services/toast.service';
 
 @Component({
   selector: 'contact',
@@ -12,7 +15,7 @@ export class ContactComponent implements OnInit {
 
   model = {
     name: '',
-    email: '',
+    from: '',
     subject: '',
     message: ''
   };
@@ -24,21 +27,28 @@ export class ContactComponent implements OnInit {
     { name: 'GitHub', link: 'https://github.com/TytoCorvus', icon: '../../assets/icons/github_icon.svg', message: 'GitHub'}
   ]
 
-  constructor() { }
+  constructor(private httpClient: HttpClient, private toastService: ToastService) { }
 
   ngOnInit(): void {
   }
 
-  sendMessage(): void {
-  }
-
-  onSubmit() {
+  async onSubmit() {
     if(!this.form.valid) {
       this.form.form.markAllAsTouched();
     } else {
-      console.log('Form submitted!');
-      console.log(this.model);
-      this.form.resetForm();
+      const success = await this.sendEmail(this.model);
+      if(success) {
+        this.toastService.createToast({ head: 'Success!', message: 'Your message has been sent!', type: ToastType.SUCCESS });
+        this.form.resetForm();
+      } else {
+        this.toastService.createToast({ head: 'Error', message: 'There was a problem sending your message.', type: ToastType.ERROR });
+      }
     }
+  }
+
+  async sendEmail(form: any): Promise<boolean> {
+    return lastValueFrom(this.httpClient.post<string>('api.brycecollins.net:3000', this.model).pipe(
+      catchError(() => of('failure')),
+      map(res => res === 'success')))
   }
 }

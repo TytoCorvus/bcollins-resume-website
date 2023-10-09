@@ -1,42 +1,43 @@
 
 <div class="header-nav">
-    <div class="navbar navbar-light navbar-expand-lg text-bg-light h-100 px-4">
+    <nav class="navbar navbar-light navbar-expand-lg text-bg-light h-100 px-4">
         <div class="container-fluid h-100">
             <div class="navbar-brand font-noto-serif fw-bold signature">Bryce Collins</div>
-            <div class="navbar-toggler nav-link border-0" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="btn dropdown border-2 border-secondary" style="position: relative;">
-                    <button class="btn nav-link" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li  *ngFor="let link of links">
-                            <a class="dropdown-item" [href]="link.url">{{link.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <div>
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <div class="navbar-nav align-self-end">
+                    <div class="d-flex align-self-end">
                         <ng-container *ngFor="let link of links">
                             <ng-container *ngTemplateOutlet="navbarLink; context: { $implicit: link }"></ng-container>
                         </ng-container>
                     </div>
                 </div>
             </div>
+            <div class="navbar-toggler">
+                <button class="btn nav-link d-block" type="button" id="dropdownMenuButton" (click)="toggleSlideOut()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         </div>
-        
+    </nav>
+</div>
+<div *ngIf="slideOut" class="slideOut bg-light" >
+    <div class="d-flex flex-column justify-content-around gap-2 text-center fw-bold h-100">
+        <ng-container *ngFor="let link of links">
+                <a (click)="routeTo(link.url, true)"> {{ link.name }}</a>
+        </ng-container>
     </div>
 </div>
 
 <ng-template #navbarLink let-link>
-    <a class="nav-link link-with-icon" (click)="routeTo(link.url)">
-        <div class="grows">
-            <h4 class="header-nav-link fw-bold px-3 align-self-center">{{link.name}}</h4>
-            <div class="flex-container text-success">
-                <i [class]="'fa header-nav-icon ' + link.icon"></i>
+    <div class="nav-link">
+        <a class="nav-link link-with-icon" (click)="routeTo(link.url)">
+            <div class="grows">
+                <h4 class="header-nav-link fw-bold px-3 align-self-center">{{link.name}}</h4>
+                <div class="flex-container">
+                    <i [class]="'fa header-nav-icon ' + link.icon"></i>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </div>
 </ng-template>
+

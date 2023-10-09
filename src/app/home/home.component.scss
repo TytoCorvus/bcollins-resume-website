@@ -184,6 +184,14 @@ $animation-duration: 1s;
     }
 }
 
+@media screen and (max-height: 600px) {
+    .home {
+        .subtext {
+            visibility: hidden;
+        }
+    }
+}
+
 .bg-dim {
     background-color: rgba(0, 0, 0, 0.733);
 

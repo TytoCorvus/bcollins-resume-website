@@ -1,0 +1,29 @@
+.toast-container {
+    position: fixed;
+    z-index: 100;
+    right: 30px;
+    top: 0px;
+    height: 100vh;
+    width: 300px;
+
+    .toast-padding {
+        bottom: 5vh;
+        right: 5vh;
+    }
+
+}
+
+@media screen and (max-width: 768) {
+    .toast-container {
+        position: fixed;
+        z-index: 100;
+        right: 0px;
+        top: 0px;
+        height: 100vh;
+        width: 100vw;
+
+        .toast-padding {
+            bottom: 5vh;
+        }
+    }
+}

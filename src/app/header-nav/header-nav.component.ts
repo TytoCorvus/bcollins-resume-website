@@ -17,13 +17,23 @@ export class HeaderNavComponent implements OnInit {
     { name: 'Contact', url: '/contact', icon: 'fa-envelope' },
   ]
 
+  slideOut = false;
+
   constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
   }
 
-  routeTo(url: string) {
+  routeTo(url: string, toggleSlideOut: boolean = false) {
     this.router.navigateByUrl(url);
+    if (toggleSlideOut) {
+      this.toggleSlideOut();
+    }
   }
+
+  toggleSlideOut() {
+    this.slideOut = !this.slideOut;
+  }
+
 
 }

@@ -12,6 +12,18 @@ $header-nav-height: 70px;
     font-size: 36px;
 }
 
+@media screen and (max-width: 768px) {
+    .signature {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .signature {
+        font-size: 18px;
+    }
+}
+
 .header-nav {
     width: 100%;
     height: $header-nav-height;
@@ -33,6 +45,7 @@ $header-nav-height: 70px;
 
 .header-nav-icon {
     position: absolute;
+    color: rgb(103, 158, 136);
 }
 
 .link-with-icon {
@@ -66,5 +79,26 @@ $header-nav-height: 70px;
 @keyframes grow {
     to {
         transform: scale(1.1)
+    }
+}
+
+.slideOut {
+    position: fixed;
+    z-index: 2;
+    top: $header-nav-height - 1px;
+    right: 0px;
+    height: auto;
+    min-width: 200px;
+    width: 20%;
+    animation: slide 0.35s forwards;
+    border-bottom-left-radius: 8px;
+}
+
+@keyframes slide {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0px;
     }
 }

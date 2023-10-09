@@ -1,4 +1,7 @@
-<div class="tech-detail text-center my-2" >
-    <div class="mx-auto" ><img class="tech-detail-icon" [class.tech-detail-icon-sm]="small" [src]="getIconPath(tech.icon)" [title]="tech.name"></div>
-    <div *ngIf="!small" >{{tech.name}}</div>
+<div class="text-center"
+    [class.tech-detail]="!small"
+    [class.tech-detail-sm]="small"
+>
+    <img class="tech-detail-icon" [class.tech-detail-icon-sm]="small" [src]="getIconPath(tech.icon)" [title]="tech.name">
+    <div *ngIf="!small" class="d-none d-md-block" >{{tech.name}}</div>
 </div>

@@ -17,6 +17,7 @@ import { TextCycleComponent } from './common/text-cycle/text-cycle.component';
 import { TechDetailComponent } from './common/tech-detail/tech-detail.component';
 import { ContactLinksComponent } from './common/contact-links/contact-links.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ToastContainer } from './toast-container/toast-container.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProjectsComponent } from './projects/projects.component';
     TextCycleComponent,
     TechDetailComponent,
     ContactLinksComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ToastContainer
   ],
   imports: [
     CommonModule,

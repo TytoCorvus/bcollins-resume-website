@@ -74,15 +74,7 @@ export class ExperienceComponent implements OnInit {
     }
   ]
 
-  photos = [
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/1BBCC59C-B7E0-489B-BC30-B0F8BFB894A9_L0_001.JPEG',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_2660.JPG',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/69102479436__F12AE96C-30A1-4EC0-9A2D-BD530B63D574.jpg',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/70906233553__28C893F9-3AFB-4F6A-93B3-249274985797.jpg',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_1999.jpg',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_2874.jpg',
-    'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/IMG_3762.jpg'
-  ]
+  photo = 'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/portraits/Professional_Portrait.png';
 
   resume = 'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/Resume.pdf';
 

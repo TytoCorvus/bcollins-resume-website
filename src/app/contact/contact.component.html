@@ -21,7 +21,7 @@
                         placeholder="Your email address" 
                         required 
                         email
-                        [(ngModel)]="model.email" 
+                        [(ngModel)]="model.from" 
                         #email="ngModel">
                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert input-error">
                         <div *ngIf="email.errors?.['required']">
@@ -57,7 +57,7 @@
         </form>
     </div>
 
-    <div class="py-6">
+    <div class="py-3">
         <contact-links [large]="true"></contact-links>
     </div>
 </div>

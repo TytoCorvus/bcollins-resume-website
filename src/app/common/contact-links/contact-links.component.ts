@@ -12,7 +12,7 @@ export class ContactLinksComponent {
     { href: 'https://www.linkedin.com/in/bryce-collins-b4b61b123', icon: 'fab fa-linkedin', alt: 'LinkedIn' },
     { href: 'https://twitter.com/TytoCorvus', icon: 'fab fa-twitter', alt: 'Twitter' },
     { href: 'https://github.com/TytoCorvus', icon: 'fab fa-github', alt: 'GitHub' },
-    { href: '', icon: 'fab fa-discord', alt: 'Discord' },
+    { href: 'https://discord.gg/mqy9mb4D9p', icon: 'fab fa-discord', alt: 'Discord' },
     { href: 'mailto: brycecollins0@gmail.com', icon: 'fa fa-envelope', alt: 'Email' },
   ]
 }
