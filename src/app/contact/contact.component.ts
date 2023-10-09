@@ -20,12 +20,7 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  contacts = [
-    { name: 'Email', link: 'mailto: brycecollins0@gmail.com', icon: '../../assets/icons/gmail_icon.svg', message: 'Email'},
-    { name: 'Twitter', link: 'https://twitter.com/TytoCorvus', icon: '../../assets/icons/twitter_icon.svg', message: 'Twitter'},
-    { name: 'LinkedIn', link: '', icon: '../../assets/icons/linkedin_icon.svg', message: 'LinkedIn'},
-    { name: 'GitHub', link: 'https://github.com/TytoCorvus', icon: '../../assets/icons/github_icon.svg', message: 'GitHub'}
-  ]
+  photoURL= 'https://brycecollins-resume-website-assets.s3.us-west-2.amazonaws.com/photos/FordyceSnow2020-8.jpeg';
 
   constructor(private httpClient: HttpClient, private toastService: ToastService) { }
 
