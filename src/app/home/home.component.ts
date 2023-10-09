@@ -9,10 +9,10 @@ import { IStyledMessage } from '../common/text-cycle/text-cycle.component';
 export class HomeComponent {
 
   textCycleMessages: IStyledMessage[] = [
-    { message: 'Computers', fontColor: '#FF813E', fontFamily: 'Playfair Display' },
-    { message: 'Software', fontColor: '#B2E4FF', fontFamily: 'Times New Roman' },
-    { message: 'People', fontColor: '#FFD24A', fontFamily: 'Playfair Display'},
-    { message: 'The Web', fontColor: '#CBD9F4ff', fontFamily: 'Helvetica'},
-    { message: 'Dev Ops', fontColor: '#80C658', fontFamily: 'ITC Berkeley' },
+    { message: 'Computers', fontColor: '#FFA371', fontFamily: 'ArchivoNarrow' },
+    { message: 'Software', fontColor: '#8BBBA8', fontFamily: 'ArchivoNarrow' },
+    { message: 'People', fontColor: '#FFDB6E', fontFamily: 'ArchivoNarrow'},
+    { message: 'The Web', fontColor: '#CBD9F4ff', fontFamily: 'ArchivoNarrow'},
+    { message: 'Dev Ops', fontColor: '#8BBBA8', fontFamily: 'ArchivoNarrow' },
   ]
 }

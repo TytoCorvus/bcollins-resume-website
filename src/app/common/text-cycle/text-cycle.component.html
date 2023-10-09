@@ -1,6 +1,6 @@
 <span
     *ngIf="currentMessage"
-    class="text-cycle border-bottom border-light border-3 rounded-2"
+    class="text-cycle border-bottom border-light border-3 rounded-2 fw-light"
     id="text-cycle"
     [style.width]="maxCharacterLength + 'ch'"
     [style.color]="currentMessage.fontColor"
@@ -8,13 +8,13 @@
     <span
         #textCycle
         *ngIf="!currentMessage.fontColorEnd; else textCycleGradient"
-        [style.fontFamily]="currentMessage.fontFamily">
+        [style.fontFamily]="currentMessage.fontFamily + ', sans-serif'">
         {{ currentMessage.message }}
     </span>
     <ng-template
         #textCycleGradient>
         <span
-            [style.fontFamily]="currentMessage.fontFamily">
+            [style.fontFamily]="currentMessage.fontFamily + ', sans-serif'">
             {{ currentMessage.message }}
         </span>
     </ng-template>

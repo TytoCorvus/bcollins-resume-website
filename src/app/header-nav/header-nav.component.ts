@@ -34,6 +34,4 @@ export class HeaderNavComponent implements OnInit {
   toggleSlideOut() {
     this.slideOut = !this.slideOut;
   }
-
-
 }
