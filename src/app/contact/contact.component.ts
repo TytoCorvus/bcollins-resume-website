@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { catchError, lastValueFrom, map, of } from 'rxjs';
+import { catchError, lastValueFrom, map, of, tap } from 'rxjs';
 import { ToastService, ToastType } from '../common/services/toast.service';
 
 @Component({
@@ -42,8 +42,11 @@ export class ContactComponent implements OnInit {
   }
 
   async sendEmail(form: any): Promise<boolean> {
-    return lastValueFrom(this.httpClient.post<string>('api.brycecollins.net:3000', this.model).pipe(
-      catchError(() => of('failure')),
-      map(res => res === 'success')))
+    return lastValueFrom(this.httpClient.post('http://api.brycecollins.net:3000/email/inquiry', form, {
+      responseType: 'text'
+    }).pipe(
+    map((res) => res === 'success'),
+    catchError(() => of(false))
+    ));
   }
 }
