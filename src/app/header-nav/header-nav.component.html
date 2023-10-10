@@ -20,10 +20,14 @@
         </div>
     </nav>
 </div>
-<div *ngIf="slideOut" class="slideOut bg-light" >
-    <div class="d-flex flex-column justify-content-around gap-2 text-center fw-bold h-100">
-        <ng-container *ngFor="let link of links">
+<div *ngIf="slideOut" class="slideOut bg-light d-block d-lg-none" >
+    <div class="d-flex flex-column justify-content-around text-center fw-bold h-100">
+        <ng-container *ngFor="let link of links; index as i">
+            <div class="nav-link slideOutLink border-secondary border-1 p-2" 
+                [class.border-bottom]="i < links.length - 1"
+            style="cursor: pointer;">
                 <a (click)="routeTo(link.url, true)"> {{ link.name }}</a>
+            </div>
         </ng-container>
     </div>
 </div>
