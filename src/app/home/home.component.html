@@ -2,18 +2,30 @@
     <div class="introduction d-flex flex-wrap sans-serif">
         <div class="introduction-1">
             <div class="w-1">Nice</div>
-            <div class="w-2">to</div>
+            <div class="w-2 text-success">to</div>
             <div class="w-3">Meet</div>
-            <div class="w-4">You</div>
+            <div class="w-4 text-success">You</div>
         </div>
         <div class="introduction-2">
             <div class="w-1">I'm</div>
-            <div class="w-2">Bryce</div>
+            <div class="w-2 text-success">Bryce</div>
         </div>
     </div>
-    <div class="subtext">
-        <h3 class="line-2 mb-2 font-playfair-display">I'm good with <text-cycle [messages]="textCycleMessages" [cycleDuration]="5000" [cycleDelay]="4000"></text-cycle>, so I make things.</h3>
-        <h3 class="line-3 font-playfair-display">Let's build something together</h3>
+    <div class="subtext d-flex flex-column justify-content-center">
+        <!-- <h3 class="line-2 mb-4 font-playfair-display"></h3> -->
+        <div class="line-2 d-flex justify-content-evenly">
+            <div class="outer ms-auto text-end align-self-end">I'm skilled with</div>
+
+            <div class="align-self-center mx-0 mx-sm-1"><text-cycle [messages]="textCycleMessages" [cycleDuration]="4000" [cycleDelay]="2500"></text-cycle></div>
+            <div class="outer me-auto text-start align-self-end">, so I create.&nbsp;&nbsp;&nbsp;</div>
+        </div>
+        <!-- <h3 class="line-3 font-playfair-display">Let's build something together</h3> -->
     </div>
+    <div class="d-flex justify-content-center gap-3 gap-md-6 flex-wrap mb-3">
+        <div class="btn btn-lg btn-success rounded-5" routerLink="/experience">&nbsp;Learn More&nbsp;</div> 
+        <div class="btn btn-lg btn-success rounded-5" routerLink="/contact">Get in Touch</div>
+    </div>
+    
     <contact-links></contact-links>
+    
 </div>

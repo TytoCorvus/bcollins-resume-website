@@ -23,7 +23,7 @@
 <div *ngIf="slideOut" class="slideOut bg-light d-block d-lg-none" >
     <div class="d-flex flex-column justify-content-around text-center fw-bold h-100">
         <ng-container *ngFor="let link of links; index as i">
-                <a (click)="routeTo(link.url, true)" class="nav-link slideOutLink border-secondary border-1 p-2" 
+                <a (click)="routeTo(link.url, true)" class="nav-link slideOutLink font-cairo border-secondary border-1 p-2" 
                     [class.border-bottom]="i < links.length - 1"
                     style="cursor: pointer;"> 
                     {{ link.name }}

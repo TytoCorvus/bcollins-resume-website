@@ -2,12 +2,12 @@
     <div class="info-card rounded-4 overflow-auto my-1 p-3">
         <div class="d-flex flex-column justify-content-center gap-4">          
             <h1 class="display-3 fw-bold font-cairo">About Me</h1>
-            <p class="h3 mx-5">Ever since I graduated from high school, I've spent my life pursuing a career where I can solve puzzles for others. 
+            <p class="h3 my-0 mx-1 mx-md-5">Ever since I graduated from high school, I've spent my life pursuing a career where I can solve puzzles for others. 
                 Working with computers always came naturally to me, so I swiftly found myself studying computer science with the goal of becoming a 
                 <a href="https://en.wikipedia.org/wiki/Software_engineering">
                     <strong class="text-danger text-uppercase fw-bold font-cairo text-decoration-underline">Software Engineer</strong>
                 </a>.</p>
-            <p class="h3 py-3 mx-5">My work has taken me through a variety of businesses and domains - 
+            <p class="h3 my-0 py-3 mx-1 mx-md-5">My work has taken me through a variety of businesses and domains - 
                 I've had the opportunity to contribute to the <strong class="font-cairo">social media</strong>, <strong class="font-cairo">finance</strong>, and <strong class="font-cairo">legal</strong> worlds 
                 throughout my tenure as a programmer. This experience has granted me the chance to refinine a 
                 <a href="https://www.w3schools.com/whatis/whatis_fullstack.asp">
@@ -15,13 +15,13 @@
                 </a>     
                 toolkit that lets me build anything with confidence. I'm proud to say that no matter your software needs,<br> <strong class="font-cairo">I can be of service:</strong>
             </p>
-            <hr>
+            <hr class="my-0">
             <div class="row g-3 mx-4">
                 <ng-container *ngFor="let icon of icons">
                     <ng-container *ngTemplateOutlet="iconWithText; context: { $implicit: icon } "></ng-container>
                 </ng-container>
             </div>
-            <div class="mx-auto my-5">
+            <div class="mx-auto mb-5">
                 <button class="btn btn-lg btn-success font-noto-serif px-5 py-2" routerLink="/contact">Get in Touch</button>
             </div>
         </div>
