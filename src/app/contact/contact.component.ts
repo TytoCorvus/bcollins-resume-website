@@ -42,7 +42,7 @@ export class ContactComponent implements OnInit {
   }
 
   async sendEmail(form: any): Promise<boolean> {
-    return lastValueFrom(this.httpClient.post('http://api.brycecollins.net:3000/email/inquiry', form, {
+    return lastValueFrom(this.httpClient.post('https://api.brycecollins.net:3001/email/inquiry', form, {
       responseType: 'text'
     }).pipe(
     map((res) => res === 'success'),
