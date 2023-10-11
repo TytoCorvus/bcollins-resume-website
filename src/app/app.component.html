@@ -1,8 +1,5 @@
-<!-- <scroll-header></scroll-header>
- -->
-
 <header-nav></header-nav>
-<div class="scene" id="scene">
+<div *ngIf="!isMobile(); else noParallax" class="scene" id="scene">
     <div class="layer" data-depth="0.085">
         <div class="hero-bg">
             <div class="hero"></div>
@@ -16,3 +13,12 @@
     </div> 
 </div>
 <toast-container></toast-container>
+
+<ng-template #noParallax>
+    <div class="scene">
+        <div class="layer">
+            <div class="hero"></div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</ng-template>

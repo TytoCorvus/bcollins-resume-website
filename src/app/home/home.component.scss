@@ -209,14 +209,14 @@ $animation-duration: 1s;
     }
 }
 
-@media screen and (max-height: 570px) {
+@media screen and (max-height: 470px) {
     .home {
         height: 100%;
 
         overflow: auto;
 
         .introduction {
-            min-height: 150vh;
+            min-height: 130vh;
             width: 100%;
             left: 10%;
     
@@ -247,7 +247,7 @@ $animation-duration: 1s;
         }
     
         .subtext {
-            min-height: 50vh;
+            min-height: 25vh;
         }
 
         .home-links {
@@ -255,11 +255,6 @@ $animation-duration: 1s;
         }
     }
 
-
-}
-
-.bg-dim {
-    background-color: rgba(0, 0, 0, 0.733);
 
 }
 
