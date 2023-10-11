@@ -1,7 +1,7 @@
 <div class="w-100 text-center d-flex flex-column justify-content-center">
     <div class="contact-links d-flex gap-2 justify-content-center rounded-3 mx-auto px-2 py-2"
         [class.contact-links-lg]="large">
-        <a *ngFor="let link of contactLinks" [href]="link.href">
+        <a *ngFor="let link of contactLinks" [href]="link.href" target="_blank">
             <i [class]="link.icon + ' text-light cursor-pointer bouncy-icon'" [title]="link.alt"></i>
         </a>
     </div>

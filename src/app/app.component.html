@@ -8,7 +8,7 @@
     <div class="layer" data-depth="0.1">
         <router-outlet></router-outlet>
     </div>
-    <div *ngIf="!isMobile()" class="layer" data-depth="0.5"> 
+    <div class="layer" data-depth="0.5"> 
         <snow-overlay></snow-overlay>
     </div> 
 </div>
@@ -19,6 +19,9 @@
         <div class="layer">
             <div class="hero"></div>
             <router-outlet></router-outlet>
+            <div style="position: absolute; top: 0px; left: 0px;">
+                <snow-overlay></snow-overlay>
+            </div>
         </div>
     </div>
 </ng-template>
