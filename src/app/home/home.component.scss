@@ -211,42 +211,51 @@ $animation-duration: 1s;
 
 @media screen and (max-height: 570px) {
     .home {
+        height: 100%;
 
+        overflow: auto;
 
+        .introduction {
+            min-height: 150vh;
+            width: 100%;
+            left: 10%;
+    
+            .introduction-1 {
+                display: none;
+                visibility: hidden;
+                width: 0%;
+                height: 0%;
+            }
+    
+            .introduction-2 {
+                height: 100%;
+                width: 60%;
+                left: 22.5%;
+    
+                .w-1 {
+                    font-size: $im-size-xsm;
+                    top: $im-top-pos-xsm;
+                    animation-delay: $intro-1-delay;
+                }
+    
+                .w-2 {
+                    font-size: $bryce-size-xsm;
+                    top: $bryce-top-pos-xsm;
+                    animation-delay: $intro-1-delay * 2;
+                }
+            }
+        }
+    
         .subtext {
-            visibility: hidden;
+            min-height: 50vh;
+        }
+
+        .home-links {
+            min-height: 70vh;
         }
     }
 
-    .introduction {
-        height: 30%;
-        width: 100%;
-        left: 10%;
 
-        .introduction-1 {
-            display: none;
-            visibility: hidden;
-            width: 0%;
-            height: 0%;
-        }
-
-        .introduction-2 {
-            width: 60%;
-            left: 22.5%;
-
-            .w-1 {
-                font-size: $im-size-xsm;
-                top: $im-top-pos-xsm;
-                animation-delay: $intro-1-delay;
-            }
-
-            .w-2 {
-                font-size: $bryce-size-xsm;
-                top: $bryce-top-pos-xsm;
-                animation-delay: $intro-1-delay * 2;
-            }
-        }
-    }
 }
 
 .bg-dim {
