@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderNavComponent implements OnInit {
 
   links = [
-    { name: 'Home', url: '/', icon: 'fa-home'},
+    { name: 'Home', url: '', icon: 'fa-home'},
     { name: 'About', url: '/about', icon: 'fa-user' },
     { name: 'Experience', url: '/experience', icon: 'fa-briefcase' },
     { name: 'Projects', url: '/projects', icon: 'fa-wrench'},
@@ -33,5 +33,9 @@ export class HeaderNavComponent implements OnInit {
 
   toggleSlideOut() {
     this.slideOut = !this.slideOut;
+  }
+
+  isCurrentRoute(route: string) {
+    return this.location.path() === route;
   }
 }

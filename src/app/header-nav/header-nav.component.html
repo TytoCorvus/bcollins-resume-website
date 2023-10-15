@@ -23,7 +23,9 @@
 <div *ngIf="slideOut" class="slideOut bg-light d-block d-lg-none" >
     <div class="d-flex flex-column justify-content-around text-center fw-bold h-100">
         <ng-container *ngFor="let link of links; index as i">
-                <a (click)="routeTo(link.url, true)" class="nav-link slideOutLink font-cairo border-secondary border-1 p-2" 
+                <a (click)="routeTo(link.url, true)" 
+                    class="nav-link slideOutLink font-cairo border-secondary border-1 p-2" 
+                    [class.active]="isCurrentRoute(link.url)"
                     [class.border-bottom]="i < links.length - 1"
                     style="cursor: pointer;"> 
                     {{ link.name }}
@@ -34,11 +36,11 @@
 
 <ng-template #navbarLink let-link>
     <div class="nav-link">
-        <a class="nav-link link-with-icon" (click)="routeTo(link.url)">
+        <a class="nav-link link-with-icon" [class.link-active]="isCurrentRoute(link.url)" (click)="routeTo(link.url)">
             <div class="grows">
-                <h4 class="header-nav-link fw-bold px-3 align-self-center">{{link.name}}</h4>
+                <h4 class="header-nav-link fw-bold px-3 align-self-center" >{{link.name}}</h4>
                 <div class="flex-container">
-                    <i [class]="'fa header-nav-icon ' + link.icon"></i>
+                    <i [class]="'fa header-nav-icon ' + link.icon" [class.icon-active]="isCurrentRoute(link.url)"></i>
                 </div>
             </div>
         </a>

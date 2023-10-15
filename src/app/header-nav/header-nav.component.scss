@@ -46,14 +46,24 @@ $header-nav-height: 70px;
 .header-nav-icon {
     position: absolute;
     color: rgb(103, 158, 136);
+    &.icon-active {
+        color: rgb(109, 143, 211);
+    }
 }
 
 .link-with-icon {
     position: relative;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &.link-active {
+        margin-left: 0px;
+        margin-right: 0px;
+        border-left: 3px solid darkslategray;
+        border-right: 3px solid darkslategray;
+    }
 }
 
 .flex-container {
@@ -70,18 +80,6 @@ $header-nav-height: 70px;
     width: 100%;
 }
 
-.link-with-icon:hover {
-    .grows {
-        animation: grow 0.4s forwards
-    }
-}
-
-@keyframes grow {
-    to {
-        transform: scale(1.1)
-    }
-}
-
 .slideOut {
     position: fixed;
     z-index: 2;
@@ -94,6 +92,18 @@ $header-nav-height: 70px;
     border-bottom-left-radius: 8px;
 }
 
+.slideOutLink {
+    &.active {
+        background-color: rgb(178, 198, 241);
+        color: black;
+    }
+}
+
+.slideOutLink:hover {
+    background-color: rgb(178, 198, 241);
+    color: white;
+}
+
 @keyframes slide {
     from {
         right: -100%;
@@ -101,9 +111,4 @@ $header-nav-height: 70px;
     to {
         right: 0px;
     }
-}
-
-.slideOutLink:hover {
-    background-color: rgb(178, 198, 241);
-    color: white;
 }

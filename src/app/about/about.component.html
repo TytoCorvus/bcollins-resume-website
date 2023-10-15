@@ -1,22 +1,53 @@
 <div class="page-content text-center">
     <div class="info-card rounded-4 overflow-auto my-1 p-3">
-        <div class="d-flex flex-column justify-content-center gap-4">          
-            <h1 class="display-3 fw-bold font-cairo">About Me</h1>
-            <p class="h3 my-0 mx-1 mx-md-5">Ever since I graduated from high school, I've spent my life pursuing a career where I can solve puzzles for others. 
-                Working with computers always came naturally to me, so I swiftly found myself studying computer science with the goal of becoming a 
-                <a href="https://en.wikipedia.org/wiki/Software_engineering" target="_blank">
-                    <strong class="text-danger text-uppercase fw-bold font-cairo text-decoration-underline">Software Engineer</strong>
-                </a>.</p>
-            <p class="h3 my-0 py-3 mx-1 mx-md-5">My work has taken me through a variety of businesses and domains - 
-                I've had the opportunity to contribute to the <strong class="font-cairo">social media</strong>, <strong class="font-cairo">finance</strong>, and <strong class="font-cairo">legal</strong> worlds 
-                throughout my service as a programmer. This experience has granted me the chance to refine a 
-                <a href="https://www.w3schools.com/whatis/whatis_fullstack.asp"  target="_blank">
-                    <strong class="text-danger text-uppercase fw-bold font-cairo text-decoration-underline">Full Stack</strong>
-                </a>     
-                toolkit that allows me to build anything with confidence. I'm proud to say that no matter your software needs,<br> <strong class="font-cairo">I can be of service:</strong>
-            </p>
-            <hr class="my-0">
-            <div class="row g-3 mx-4">
+        <div class="d-flex flex-column justify-content-center gap-5 my-3">
+            <div class="d-flex justify-content-center mx-1 mx-md-5 mx-xl-8">
+                <div class="about-container container-1 px-1 px-md-2 row align-items-center">
+                    <div class="col-8 col-lg-6">
+                        <h2 class="about-header font-cairo text-success">Puzzle-solving is a passion of mine</h2>
+                        <p class="about-body px-4 font-noto-serif">Ever since I was young, I've pursued a career where I can use my talents to solve puzzles for others.</p>
+                    </div>
+                    <div class="col-4 offset-lg-1">
+                        <a [href]="jigsaw.credit" target="_blank" class="flaticon">
+                            <img src="{{ jigsaw.link }}" class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mx-1 mx-md-5 mx-xl-8">
+                <div class="about-container container-2 px-1 px-md-2 row align-items-center">
+                    <div class="col-4">
+                        <a [href]="study.credit" target="_blank" class="flaticon">
+                            <img src="{{ study.link }}" class="img-fluid" />
+                        </a>
+                    </div>
+                    <div class="col-8 col-lg-6 offset-0 offset-lg-1">
+                        <h2 class="about-header font-cairo text-success">Obsession drove me to be an Engineer</h2>
+                        <p class="about-body px-4 font-noto-serif">I found myself working towards a degree in Computer Science, studying topics from language construction to game theory and artificial intelligence.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mx-1 mx-md-5 mx-xl-8">
+                <div class="about-container container-3 px-1 px-md-2 row align-items-center">
+                    <div class="col-8 col-lg-6">
+                        <h2 class="about-header font-cairo text-success">I've refined my Full Stack toolkit for years</h2>
+                        <p class="about-body px-4 font-noto-serif">My work has taken me through a variety of businesses and domains. I've contributed to the <strong class="font-cairo text-uppercase">social media</strong>, <strong class="font-cairo text-uppercase">finance</strong>, and <strong class="font-cairo text-uppercase">legal</strong> worlds in my time as a programmer.</p>
+                    </div>
+                    <div class="col-4 offset-lg-1">
+                        <a [href]="toolbox.credit" target="_blank" class="flaticon">
+                            <img src="{{ toolbox.link }}" class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="about-container container-4 px-1 px-md-4">
+                    <h2>My experience lets me build with confidence.</h2>
+                    <h2>I'm proud to say that no matter your software needs,</h2>
+                    <h1 class="fw-bold text-decoration-underline">I can be of service:</h1>
+                </div>
+            </div>
+            <div class="row container-5 g-3 mx-4">
                 <ng-container *ngFor="let icon of icons">
                     <ng-container *ngTemplateOutlet="iconWithText; context: { $implicit: icon } "></ng-container>
                 </ng-container>
@@ -31,7 +62,7 @@
 <ng-template #iconWithText let-icon>
     <div class="col-6 col-md-3 py-2">
         <div class="d-flex flex-column justify-content-center text-center">
-                <a [href]="icon.credit" target="_blank" title="software engineer icons" >
+                <a [href]="icon.credit" target="_blank" title="software engineer icons" class="flaticon">
                     <img src="{{ icon.link }}" class="img-fluid" />
                 </a>
             <hr>
