@@ -31,9 +31,6 @@ jobs:
     
     - name: Build and deploy to S3
       run: |
-        pwd
-        ls
-        cd ./resume-site/web
         npm install
         npm run build
         aws s3 sync dist/ s3://${{ vars.AWS_S3_BUCKET_NAME }} --delete
